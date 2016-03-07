@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #909090;
+}
+
+img {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 135px;
+}
+
+.preview {
+    display: none;
+}
+
+.portrait {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.button-div {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.button {
+    color: floralwhite;
+    width: 33.33%;
+    padding: 17px 0;
+    text-align: center;
+    float: left;
+    background-color: dimgrey;
+}
+
+.color {
+    color: floralwhite;
+    width: 100%;
+    position: fixed;
+    bottom: 69px;
+    padding: 25px 0;
+    text-align: center;
+    background-color: #777777;
+}
+
+.material-icons {
+    font-size: 2em !important;
+}
