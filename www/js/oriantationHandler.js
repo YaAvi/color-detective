@@ -9,7 +9,7 @@
         image.className = "landscape";
     }
     window.addEventListener("orientationchange", function () {
-        if (image.src === "file:///android_asset/www/img/portrait.jpg") {
+        if (image.src === "file:///android_asset/www/img/portrait.jpg") { // example image
             image.src = "file:///android_asset/www/img/landscape.jpg";
         } else if (image.src === "file:///android_asset/www/img/landscape.jpg") {
             image.src = "file:///android_asset/www/img/portrait.jpg";
