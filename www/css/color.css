@@ -38,6 +38,10 @@ img {
     background-color: dimgrey;
 }
 
+#camera-button {
+    background-color: #737373;
+}
+
 .color {
     color: floralwhite;
     width: 100%;
