@@ -2,6 +2,8 @@ var publicAPI = (function () {
     'use strict';
     
     var colorData,
+        clsColor,
+        colorTospeak = 'color',
         image = document.getElementById('camImage'),
         color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
@@ -14,7 +16,7 @@ var publicAPI = (function () {
     function hexToB(h) {return parseInt(h.substring(4, 6), 16); } // B
         
     function colorName(R, G, B) {
-        var minSum = 7777, sum, clsColor, red, green, blue;
+        var minSum = 7777, sum, red, green, blue;
         for (var clr = 0; clr < colorData.length; clr++) { 
             red = hexToR(colorData[clr][0]);
             green = hexToG(colorData[clr][0]);
@@ -25,8 +27,8 @@ var publicAPI = (function () {
                 clsColor = clr;
             }
         }
-        color.innerHTML = colorData[clsColor][1];
-
+        color.children[0].innerHTML = colorData[clsColor][1];
+        colorTospeak = colorData[clsColor][1];
         changeStyleColor(R, G, B);
     }
     
@@ -68,11 +70,20 @@ var publicAPI = (function () {
             urlButton.style.color = 'rgb(16,16,16)';
         }
     }
+    function speakColor(){
+        TTS
+        .speak(colorTospeak, function () {
+            console.log('success');
+        }, function (reason) {
+            console.log(reason);
+        });
+    }
     
     function loadColorData(clrData){
         colorData = clrData;
     }
     return {
+        speak: speakColor,
         loadColorData: loadColorData,
         colorName: colorName
     };
