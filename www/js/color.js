@@ -1,29 +1,35 @@
 var publicAPI = (function () {
     'use strict';
     
-    var colorList,
+    var colorData,
         image = document.getElementById('camImage'),
         color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
         galleryButton = document.getElementById('gallery-button'),
         urlButton = document.getElementById('url-button');
-
+    
+    // Hex to RGB
+    function hexToR(h) {return parseInt(h.substring(0, 2), 16); } // R
+    function hexToG(h) {return parseInt(h.substring(2, 4), 16); } // G
+    function hexToB(h) {return parseInt(h.substring(4, 6), 16); } // B
+        
     function colorName(R, G, B) {
-        var minSum = 255, sum, clsColor;
-        for (var clr in colorList) { 
-            sum = Math.sqrt(
-                Math.pow((R - colorList[clr].rgb[0]), 2) 
-                + Math.pow((G - colorList[clr].rgb[1]), 2) 
-                + Math.pow((B - colorList[clr].rgb[2]), 2));
+        var minSum = 7777, sum, clsColor, red, green, blue;
+        for (var clr = 0; clr < colorData.length; clr++) { 
+            red = hexToR(colorData[clr][0]);
+            green = hexToG(colorData[clr][0]);
+            blue = hexToB(colorData[clr][0]);
+            sum = Math.pow((R - red), 2) + Math.pow((G - green), 2) + Math.pow((B - blue), 2);
             if (sum < minSum) {
                 minSum = sum;
                 clsColor = clr;
             }
         }
-        color.innerHTML = colorList[clsColor].name;
-        
+        color.innerHTML = colorData[clsColor][1];
+
         changeStyleColor(R, G, B);
     }
+    
 
     function componentToHex(c) {
         var hex = c.toString(16);
@@ -64,7 +70,7 @@ var publicAPI = (function () {
     }
     
     function loadColorData(clrData){
-        colorList = clrData;
+        colorData = clrData;
     }
     return {
         loadColorData: loadColorData,

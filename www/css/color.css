@@ -50,8 +50,19 @@ img {
     padding: 25px 0;
     text-align: center;
     background-color: #777777;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 
 .material-icons {
     font-size: 2em !important;
+    transition: all .2s ease-in-out;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
+
+    .button:active > .material-icons {
+        transform: scale(0.7);
+    }
