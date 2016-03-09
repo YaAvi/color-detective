@@ -26,10 +26,11 @@
         <script type="text/javascript" charset="utf-8"src="js/oriantationHandler.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/touchHandler.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/tts.js"></script>
+        <script type="text/javascript" charset="utf-8"src="js/style.js"></script>
         <script>
             (function () {
                 publicAPI.loadColorData(colorData);
-                touchInit(publicAPI.colorName);
+                touchInit(publicAPI.colorName, style.changeColor);
             }());
         </script>
     </body>
