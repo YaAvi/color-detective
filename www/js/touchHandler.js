@@ -23,5 +23,4 @@ var touchInit = (function () {
     }
     
     return touchHandler;
-
 }());
