@@ -1,7 +1,8 @@
-var camera = (function () {
+(function () {
     'use strict';
     var DATA_URL = 0,
-        image = document.getElementById('camImage'),
+        src,
+        cameraButton = document.getElementById('camera-button'),
         cameraOptions = {
             quality: 77,
             destinationType: DATA_URL,
@@ -9,7 +10,8 @@ var camera = (function () {
         };
     
     function cameraCallback(imageData) {
-        image.src = "data:image/jpeg;base64," + imageData;
+        src = "data:image/jpeg;base64," + imageData;
+        style.changeImgSrc(src);
     }
 
     function cameraError() {
@@ -20,7 +22,5 @@ var camera = (function () {
         navigator.camera.getPicture(cameraCallback, cameraError, cameraOptions);
     }
     
-    return {
-        capturePhoto: capturePhoto
-    };
+    cameraButton.onclick = capturePhoto;
 }());

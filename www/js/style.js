@@ -1,6 +1,7 @@
 var style = (function () {
     'use strict';
-    var color = document.getElementById('color'),
+    var image = document.getElementById('camImage'),
+        color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
         galleryButton = document.getElementById('gallery-button'),
         urlButton = document.getElementById('url-button');
@@ -17,16 +18,15 @@ var style = (function () {
     function changeBackgroundColor(element, r, g, b) {
         element.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     }
-    
+        
+    function bodyColor(clr) {
+        return ((clr + 30) > 255) ? 255 : (clr + 30);
+    }
+    function buttonColor(clr, offset) {
+        return ((clr - offset) < 0) ? 0 : (clr - offset);
+    }
+        
     function changeStyleColor(r, g, b) {
-        
-        function bodyColor(clr) {
-            return ((clr + 30) > 255) ? 255 : (clr + 30);
-        }
-        function buttonColor(clr, offset) {
-            return ((clr - offset) < 0) ? 0 : (clr - offset);
-        }
-        
         StatusBar.backgroundColorByHexString(rgbToHex(buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30)));
         changeBackgroundColor(cameraButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(galleryButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
@@ -47,7 +47,22 @@ var style = (function () {
         }
     }
     
+    function applyClass() {
+        if (screen.orientation.type === "portrait-primary" && image.height < image.width) {
+            image.className = "portrait";
+        } else {
+            image.className = "landscape";
+        }
+    }
+    
+    function changeImgSrc(src) {
+        image.src = src;
+    }
+    
+    image.onload = applyClass;
+    
     return {
-        changeColor: changeStyleColor
+        changeColor: changeStyleColor,
+        changeImgSrc: changeImgSrc
     };
 }());

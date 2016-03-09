@@ -1,12 +1,12 @@
-var tts = (function () {
+(function () {
+    'use strict';
     var color = document.getElementById('color'),
         colorTospeak = color.children[0].innerHTML;
     
-    function speakColor(){
-        colorTospeak = color.children[0].innerHTML
-        TTS
-        .speak({
-            text:colorTospeak,
+    function speakColor() {
+        colorTospeak = color.children[0].innerHTML;
+        TTS.speak({
+            text: colorTospeak,
             local: 'en-GB',
             rate: 0.8
         }, function () {
@@ -15,8 +15,5 @@ var tts = (function () {
             console.log(reason);
         });
     }
-    
-    return {
-        speak: speakColor
-    }
+    color.onclick = speakColor;
 }());

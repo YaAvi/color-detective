@@ -1,6 +1,6 @@
 var publicAPI = (function () {
     'use strict';
-    var colorData,
+    var cData,
         clsColor,
         image = document.getElementById('camImage'),
         color = document.getElementById('color');
@@ -12,24 +12,25 @@ var publicAPI = (function () {
     
     function colorName(R, G, B) {
         var minSum = 7777, sum, red, green, blue;
-        for (var clr = 0; clr < colorData.length; clr++) { 
-            red = hexToR(colorData[clr][0]);
-            green = hexToG(colorData[clr][0]);
-            blue = hexToB(colorData[clr][0]);
+        for (var clr = 0; clr < cData.length; clr++) { 
+            red = hexToR(cData[clr][0]);
+            green = hexToG(cData[clr][0]);
+            blue = hexToB(cData[clr][0]);
             sum = Math.pow((R - red), 2) + Math.pow((G - green), 2) + Math.pow((B - blue), 2);
             if (sum < minSum) {
                 minSum = sum;
                 clsColor = clr;
             }
         }
-        color.children[0].innerHTML = colorData[clsColor][1];
+        color.children[0].innerHTML = cData[clsColor][1];
     }
     
     function loadColorData(clrData){
-        colorData = clrData;
+        cData = clrData;
     }
+    loadColorData(colorData);
+    
     return {
-        loadColorData: loadColorData,
         colorName: colorName
     };
 }());

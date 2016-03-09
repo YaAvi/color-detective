@@ -1,4 +1,4 @@
-var touchInit = (function () {
+(function () {
     'use strict';
     var image = document.getElementById('camImage');
     
@@ -21,6 +21,5 @@ var touchInit = (function () {
             changeColor(pColor[0], pColor[1], pColor[2]);
         }, false);
     }
-    
-    return touchHandler;
+    touchHandler(publicAPI.colorName, style.changeColor);
 }());

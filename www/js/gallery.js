@@ -1,8 +1,9 @@
-var gallery = (function () {
+(function () {
     'use strict';
     var DATA_URL = 0,
         PHOTOLIBRARY = 0,
-        image = document.getElementById('camImage'),
+        src,
+        galleryButton = document.getElementById('gallery-button'),
         galleryOptions = {
             quality: 77,
             destinationType: DATA_URL,
@@ -11,7 +12,8 @@ var gallery = (function () {
         };
     
     function galleryCallback(imageData) {
-        image.src = "data:image/jpeg;base64," + imageData;
+        src = "data:image/jpeg;base64," + imageData;
+        style.changeImgSrc(src);
     }
 
     function galleryError() {
@@ -22,7 +24,5 @@ var gallery = (function () {
         navigator.camera.getPicture(galleryCallback, galleryError, galleryOptions);
     }
     
-    return {
-        loadPhoto: loadPhoto
-    };
+    galleryButton.onclick = loadPhoto;
 }());

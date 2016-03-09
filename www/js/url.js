@@ -1,20 +1,20 @@
-var url = (function () {
+(function () {
     'use strict';
-    var image = document.getElementById('camImage');
-    
+    var urlButton = document.getElementById('url-button');
     function checkURL(url) {
         return (url.match(/\.(jpeg|jpg|gif|png)$/) !== null);
     }
     
     function urlHandle() {
         var url = window.prompt("Enter an image URL:");
-        if (checkURL(url)) {
-            image.src = url;
-        } else {
-            window.alert("Not an image URL!");
+        if (url) {
+            if (checkURL(url)) {
+                style.changeImgSrc(url);
+            } else {
+                window.alert("Not an image URL!");
+            }
         }
     }
-    return {
-        urlHandler: urlHandle
-    };
+    
+    urlButton.onclick = urlHandle;
 }());
