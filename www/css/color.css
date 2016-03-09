@@ -53,7 +53,7 @@ img {
     -ms-user-select: none; /* IE10+ */
 }
 .color p {
-    transition: all .1s ease-in-out;
+    transition: all .1s ease-out;
 }
     .color p:active {
         transform: scale(1.3);
