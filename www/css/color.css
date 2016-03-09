@@ -13,10 +13,6 @@ img {
     padding-bottom: 135px;
 }
 
-.preview {
-    display: none;
-}
-
 .portrait {
     position: absolute;
     top: 50%;
@@ -45,6 +41,7 @@ img {
 .color {
     color: floralwhite;
     width: 100%;
+    font-size: 1em;
     position: fixed;
     bottom: 69px;
     padding: 25px 0;

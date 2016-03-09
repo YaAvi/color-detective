@@ -7,7 +7,7 @@ var url = (function () {
     }
     
     function urlHandle() {
-        var url = window.prompt("Enter an image URL:", "");
+        var url = window.prompt("Enter an image URL:");
         if (checkURL(url)) {
             image.src = url;
         } else {

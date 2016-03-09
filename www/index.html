@@ -9,7 +9,7 @@
     </head>
     <body>
         <img id="camImage" src="img/portrait.jpg" /> <br>
-        <div class="color" id="color" onclick="publicAPI.speak()"><p>Color</p></div>
+        <div class="color" id="color" onclick="tts.speak()"><p>Color</p></div>
         
         <div class="button-div">
             <div class="button" id="url-button" onclick="url.urlHandler();"><i class="material-icons">public</i></div>
@@ -17,6 +17,7 @@
             <div class="button" id="gallery-button" onclick="gallery.loadPhoto();"><i class="material-icons">collections</i></div>
         </div>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        
         <script type="text/javascript" charset="utf-8"src="js/color.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/colorData.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/camera.js"></script>
@@ -24,6 +25,7 @@
         <script type="text/javascript" charset="utf-8"src="js/gallery.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/oriantationHandler.js"></script>
         <script type="text/javascript" charset="utf-8"src="js/touchHandler.js"></script>
+        <script type="text/javascript" charset="utf-8"src="js/tts.js"></script>
         <script>
             (function () {
                 publicAPI.loadColorData(colorData);

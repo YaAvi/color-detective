@@ -3,7 +3,6 @@ var publicAPI = (function () {
     
     var colorData,
         clsColor,
-        colorTospeak = 'color',
         image = document.getElementById('camImage'),
         color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
@@ -15,33 +14,6 @@ var publicAPI = (function () {
     function hexToG(h) {return parseInt(h.substring(2, 4), 16); } // G
     function hexToB(h) {return parseInt(h.substring(4, 6), 16); } // B
         
-    function colorName(R, G, B) {
-        var minSum = 7777, sum, red, green, blue;
-        for (var clr = 0; clr < colorData.length; clr++) { 
-            red = hexToR(colorData[clr][0]);
-            green = hexToG(colorData[clr][0]);
-            blue = hexToB(colorData[clr][0]);
-            sum = Math.pow((R - red), 2) + Math.pow((G - green), 2) + Math.pow((B - blue), 2);
-            if (sum < minSum) {
-                minSum = sum;
-                clsColor = clr;
-            }
-        }
-        color.children[0].innerHTML = colorData[clsColor][1];
-        colorTospeak = colorData[clsColor][1];
-        changeStyleColor(R, G, B);
-    }
-    
-
-    function componentToHex(c) {
-        var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
-    }
-
-    function rgbToHex(r, g, b) {
-        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-    }
-
     function changeStyleColor(r, g, b) {
         
         function bodyColor(clr){
@@ -70,20 +42,36 @@ var publicAPI = (function () {
             urlButton.style.color = 'rgb(16,16,16)';
         }
     }
-    function speakColor(){
-        TTS
-        .speak(colorTospeak, function () {
-            console.log('success');
-        }, function (reason) {
-            console.log(reason);
-        });
+    
+    function colorName(R, G, B) {
+        var minSum = 7777, sum, red, green, blue;
+        for (var clr = 0; clr < colorData.length; clr++) { 
+            red = hexToR(colorData[clr][0]);
+            green = hexToG(colorData[clr][0]);
+            blue = hexToB(colorData[clr][0]);
+            sum = Math.pow((R - red), 2) + Math.pow((G - green), 2) + Math.pow((B - blue), 2);
+            if (sum < minSum) {
+                minSum = sum;
+                clsColor = clr;
+            }
+        }
+        color.children[0].innerHTML = colorData[clsColor][1];
+        changeStyleColor(R, G, B);
+    }
+
+    function componentToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }
     
     function loadColorData(clrData){
         colorData = clrData;
     }
     return {
-        speak: speakColor,
         loadColorData: loadColorData,
         colorName: colorName
     };
