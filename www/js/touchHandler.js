@@ -21,5 +21,5 @@
             changeColor(pColor[0], pColor[1], pColor[2]);
         }, false);
     }
-    touchHandler(publicAPI.colorName, style.changeColor);
+    touchHandler(color.changeName, style.changeColor);
 }());

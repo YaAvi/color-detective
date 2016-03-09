@@ -1,10 +1,9 @@
-var publicAPI = (function () {
+var color = (function () {
     'use strict';
     var cData,
         clsColor,
         image = document.getElementById('camImage'),
         color = document.getElementById('color');
-    
     // Hex to RGB
     function hexToR(h) {return parseInt(h.substring(0, 2), 16); } // R
     function hexToG(h) {return parseInt(h.substring(2, 4), 16); } // G
@@ -31,6 +30,6 @@ var publicAPI = (function () {
     loadColorData(colorData);
     
     return {
-        colorName: colorName
+        changeName: colorName
     };
 }());
