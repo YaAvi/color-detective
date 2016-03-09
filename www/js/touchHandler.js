@@ -1,12 +1,6 @@
 var touchInit = (function () {
     'use strict';
-    var image = document.getElementById('camImage'),
-        distanceArr = [],
-        viewWidth = image.width,
-        imageSize = image.width,
-        maxZoom = image.width * 2,
-        minZoom = image.width / 2,
-        marginLeft = 0;
+    var image = document.getElementById('camImage');
     
     function touchHandler(colorName, changeColor) {
         image.addEventListener('touchend', function (e) {
