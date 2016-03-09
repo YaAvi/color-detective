@@ -14,6 +14,10 @@ var style = (function () {
         return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }
     
+    function changeBackgroundColor(element, r, g, b) {
+        element.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    }
+    
     function changeStyleColor(r, g, b) {
         
         function bodyColor(clr) {
@@ -24,11 +28,11 @@ var style = (function () {
         }
         
         StatusBar.backgroundColorByHexString(rgbToHex(buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30)));
-        cameraButton.style.backgroundColor = 'rgb(' + buttonColor(r, 15) + ', ' + buttonColor(g, 15) + ', ' + buttonColor(b, 15) + ')';
-        galleryButton.style.backgroundColor = 'rgb(' + buttonColor(r, 30) + ', ' + buttonColor(g, 30) + ', ' + buttonColor(b, 30) + ')';
-        urlButton.style.backgroundColor = 'rgb(' + buttonColor(r, 30) + ', ' + buttonColor(g, 30) + ', ' + buttonColor(b, 30) + ')';
-        color.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
-        document.body.style.backgroundColor = 'rgb(' + bodyColor(r) + ', ' + bodyColor(g) + ', ' + bodyColor(b) + ')';
+        changeBackgroundColor(cameraButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
+        changeBackgroundColor(galleryButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
+        changeBackgroundColor(urlButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
+        changeBackgroundColor(color, r, g, b);
+        changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
         
         if ((r + g + b) < (150 * 3)) {
             color.style.color = 'floralwhite';
