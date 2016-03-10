@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    var image = document.getElementById('camImage');
-    
+    var image = document.getElementById('camImage'),
+        touchMoved = false;
     function touchHandler(colorName, changeColor) {
         image.addEventListener('touchend', function (e) {
             var pColor,
@@ -17,8 +17,15 @@
             ctx.drawImage(image, imageBounds.left, imageBounds.top, image.width, image.height);
 
             pColor = ctx.getImageData(xCord, yCord, 1, 1).data;
-            colorName(pColor[0], pColor[1], pColor[2]);
-            changeColor(pColor[0], pColor[1], pColor[2]);
+            if (!touchMoved) {
+                colorName(pColor[0], pColor[1], pColor[2]);
+                changeColor(pColor[0], pColor[1], pColor[2]);
+            }
+            touchMoved = false;
+        }, false);
+        
+        image.addEventListener('touchmove', function (e) {
+            touchMoved = true;
         }, false);
     }
     touchHandler(color.changeName, style.changeColor);

@@ -14,6 +14,33 @@ img {
     padding-bottom: 135px;
 }
 
+.image-url {
+    position: fixed;
+    bottom: -70px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    transition: all .3s ease-in-out;
+    background-color: dimgrey;
+}
+    .url-input {
+        margin: 15px 7px;
+        padding: 10px;
+        width: 77%;
+    }
+
+    .url-confirm {
+        float: right;
+        padding: 20px 6px;
+        background-color: #737373;
+        color: floralwhite;
+    }
+    
+    .url-confirm:active > .material-icons {
+        transform: scale(0.7);
+    }
+
 .portrait {
     position: absolute;
     top: 50%;

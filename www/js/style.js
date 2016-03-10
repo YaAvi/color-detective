@@ -4,7 +4,9 @@ var style = (function () {
         color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
         galleryButton = document.getElementById('gallery-button'),
-        urlButton = document.getElementById('url-button');
+        urlButton = document.getElementById('url-button'),
+        confirmButton = document.getElementById('url-confirm'),
+        imageUrl = document.getElementById('image-url');
     
     function componentToHex(c) {
         var hex = c.toString(16);
@@ -31,10 +33,12 @@ var style = (function () {
         changeBackgroundColor(cameraButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(galleryButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
         changeBackgroundColor(urlButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
+        changeBackgroundColor(imageUrl, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
+        changeBackgroundColor(confirmButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(color, r, g, b);
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
         
-        if ((r + g + b) < (150 * 3)) {
+        if ((r + g + b) < (130 * 3)) {
             color.style.color = 'floralwhite';
             cameraButton.style.color = 'floralwhite';
             galleryButton.style.color = 'floralwhite';
