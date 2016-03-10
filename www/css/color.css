@@ -7,11 +7,36 @@ body {
     background-color: #909090;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #737373;
+    color: floralwhite;
+}
+    .title {
+        position: absolute;
+        width: 70%;
+        padding: 15px 10px;
+        font-size: 1.13em;
+    }
+    .donate {
+        padding: 9px 4px;
+        float: right;
+        width: 10%;
+        transition: all .3s ease-in-out;
+    }
+        .donate:active > .material-icons {
+            transform: scale(0.7);
+        }
 img {
     width: 100%;
     margin: 0 auto;
     overflow: auto;
     padding-bottom: 135px;
+    padding-top: 50px;
 }
 
 .image-url {

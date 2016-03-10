@@ -1,6 +1,7 @@
 var style = (function () {
     'use strict';
-    var image = document.getElementById('camImage'),
+    var head = document.getElementById('head'),
+        image = document.getElementById('camImage'),
         color = document.getElementById('color'),
         cameraButton = document.getElementById('camera-button'),
         galleryButton = document.getElementById('gallery-button'),
@@ -35,6 +36,7 @@ var style = (function () {
         changeBackgroundColor(urlButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
         changeBackgroundColor(imageUrl, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
         changeBackgroundColor(confirmButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
+        changeBackgroundColor(head, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(color, r, g, b);
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
         
@@ -43,11 +45,15 @@ var style = (function () {
             cameraButton.style.color = 'floralwhite';
             galleryButton.style.color = 'floralwhite';
             urlButton.style.color = 'floralwhite';
+            confirmButton.style.color = 'floralwhite';
+            head.style.color = 'floralwhite';
         } else {
-            color.style.color = 'rgb(16,16,16)';
-            cameraButton.style.color = 'rgb(16,16,16)';
-            galleryButton.style.color = 'rgb(16,16,16)';
-            urlButton.style.color = 'rgb(16,16,16)';
+            color.style.color = 'rgb(40,40,40)';
+            cameraButton.style.color = 'rgb(40,40,40)';
+            galleryButton.style.color = 'rgb(40,40,40)';
+            urlButton.style.color = 'rgb(40,40,40)';
+            confirmButton.style.color = 'rgb(40,40,40)';
+            head.style.color = 'rgb(40,40,40)';
         }
     }
     

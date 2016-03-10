@@ -1,7 +1,9 @@
 (function () {
     'use strict';
     var image = document.getElementById('camImage'),
-        touchMoved = false;
+        touchMoved = false,
+        headSize = 50;
+    
     function touchHandler(colorName, changeColor) {
         image.addEventListener('touchend', function (e) {
             var pColor,
@@ -16,7 +18,7 @@
 
             ctx.drawImage(image, imageBounds.left, imageBounds.top, image.width, image.height);
 
-            pColor = ctx.getImageData(xCord, yCord, 1, 1).data;
+            pColor = ctx.getImageData(xCord, yCord - headSize, 1, 1).data;
             if (!touchMoved) {
                 colorName(pColor[0], pColor[1], pColor[2]);
                 changeColor(pColor[0], pColor[1], pColor[2]);
