@@ -39,21 +39,11 @@ var style = (function () {
         changeBackgroundColor(head, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(color, r, g, b);
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
-        
-        if ((r + g + b) < (130 * 3)) {
-            color.style.color = 'floralwhite';
-            cameraButton.style.color = 'floralwhite';
-            galleryButton.style.color = 'floralwhite';
-            urlButton.style.color = 'floralwhite';
-            confirmButton.style.color = 'floralwhite';
-            head.style.color = 'floralwhite';
+        // brightness check
+        if ((((r * 299) + (g * 587) + (b * 114)) / 1000) > 220) {
+            document.body.style.color = 'rgb(40,40,40)';
         } else {
-            color.style.color = 'rgb(40,40,40)';
-            cameraButton.style.color = 'rgb(40,40,40)';
-            galleryButton.style.color = 'rgb(40,40,40)';
-            urlButton.style.color = 'rgb(40,40,40)';
-            confirmButton.style.color = 'rgb(40,40,40)';
-            head.style.color = 'rgb(40,40,40)';
+            document.body.style.color = 'floralwhite';
         }
     }
     
