@@ -13,10 +13,10 @@
                 yCord = parseInt(touchobj.clientY, 10), // get y position of touch point relative to top edge (decimal)
                 canvas = document.createElement('canvas'),
                 ctx = canvas.getContext('2d');
-            canvas.width = image.width + imageBounds.left;
+            canvas.width = image.width;
             canvas.height = image.height + imageBounds.top; // for when the image is not overflowing 
 
-            ctx.drawImage(image, imageBounds.left, imageBounds.top, image.width, image.height);
+            ctx.drawImage(image, 0, imageBounds.top, image.width, image.height);
 
             pColor = ctx.getImageData(xCord, yCord - headSize, 1, 1).data;
             if (!touchMoved) {
