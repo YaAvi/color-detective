@@ -12,6 +12,6 @@ load a picture in one of three ways:
 touch anywhere in the picture to get the color name.
 touch the color name to hear it (tts).
 
-view history using the top right button.
+view history using the top left button.
 
-You can donate using the top left button. ^_^
+You can donate using the top right button. ^_^
