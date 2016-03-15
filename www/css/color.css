@@ -10,7 +10,7 @@ body {
 
 
 /* -------------------------- HEADER STYLE ------------------------- */
-.header {
+#head {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,12 +20,12 @@ body {
     background-color: #737373;
     transition: all .3s ease-in-out;
 }
-    .history-button {   
+    #history-button {   
         padding: 9px 4px;
         float: left;
         width: 10%;
     }
-        .history-button:active > .material-icons {
+        #history-button:active > .material-icons {
             transform: scale(0.7);
         }
     .title {
@@ -45,7 +45,7 @@ body {
 
 /* -------------------------- HISTORY STYLE ------------------------ */
 
-.history {
+#history {
     position: fixed;
     top: 50px;
     left: -190px;
@@ -72,10 +72,10 @@ body {
             width: 98.4%;
             padding-top: 10px;
         }
-    .delete-history {
+    #delete-history {
         float: right;
     }
-        .delete-history:active > .material-icons {
+        #delete-history:active > .material-icons {
             transform: scale(0.7);
         }
 
@@ -88,7 +88,7 @@ img {
     overflow: auto;
 }
 
-.image-url {
+#image-url {
     position: fixed;
     bottom: -70px;
     left: 0;
@@ -98,19 +98,19 @@ img {
     transition: all .3s ease-in-out;
     background-color: dimgrey;
 }
-    .url-input {
+    #url-input {
         margin: 15px 7px;
         padding: 10px;
         width: 77%;
     }
 
-    .url-confirm {
+    #url-confirm {
         float: right;
         padding: 20px 6px;
         background-color: #737373;
     }
     
-    .url-confirm:active > .material-icons {
+    #url-confirm:active > .material-icons {
         transform: scale(0.7);
     }
 
@@ -138,7 +138,7 @@ img {
     background-color: #737373;
 }
 
-.color {
+#color {
     width: 100%;
     font-size: 1em;
     position: fixed;
@@ -150,10 +150,10 @@ img {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
 }
-.color p {
+#color p {
     transition: all .1s ease-out;
 }
-    .color p:active {
+    #color p:active {
         transform: scale(1.3);
     }
 
