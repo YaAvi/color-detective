@@ -7,6 +7,7 @@ var style = (function () {
         galleryButton = document.getElementById('gallery-button'),
         urlButton = document.getElementById('url-button'),
         confirmButton = document.getElementById('url-confirm'),
+        wrapper = document.getElementById('wrapper'),
         imageUrl = document.getElementById('image-url');
     
     function componentToHex(c) {
@@ -41,10 +42,13 @@ var style = (function () {
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
         // brightness check
         if ((((r * 299) + (g * 587) + (b * 114)) / 1000) > 220) {
-            document.body.style.color = 'rgb(40,40,40)';
+            head.style.color = 'rgb(40,40,40)';
+            wrapper.style.color = 'rgb(40,40,40)';
         } else {
-            document.body.style.color = 'floralwhite';
+            head.style.color = 'floralwhite';
+            wrapper.style.color = 'floralwhite';
         }
+        colorHistory.addColor(color.innerHTML, r, g, b);
     }
     
     function applyClass() {

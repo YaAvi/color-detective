@@ -8,35 +8,78 @@ body {
     color: floralwhite;
 }
 
+
+/* -------------------------- HEADER STYLE ------------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 50px;
+    z-index: 500;
     background-color: #737373;
+    transition: all .3s ease-in-out;
 }
+    .history-button {   
+        padding: 9px 4px;
+        float: left;
+        width: 10%;
+    }
+        .history-button:active > .material-icons {
+            transform: scale(0.7);
+        }
     .title {
-        position: absolute;
+        float: left;
         width: 70%;
-        padding: 15px 10px;
+        padding: 14px 5px;
         font-size: 1.13em;
     }
     .donate {
         padding: 9px 4px;
         float: right;
         width: 10%;
-        transition: all .2s ease-in-out;
     }
         .donate:active > .material-icons {
             transform: scale(0.7);
         }
+
+/* -------------------------- HISTORY STYLE ------------------------ */
+
+.history {
+    position: fixed;
+    top: 50px;
+    left: -190px;
+    width: 190px;
+    transition: all .3s ease-in-out;
+    z-index: 100;
+    background-color: rgba(77, 77, 77, 0.5);
+    bottom: 138px;
+    overflow: auto;
+}
+    .color-sample {
+        width: 180px;
+        height: 50px;
+        z-index: 101;
+        margin: 5px;
+    }
+        .color-name {
+            width: 100%;
+            padding-top: 1px;
+            padding-left: 3px;
+        }
+        .color-hex {
+            text-align: right;
+            width: 98.4%;
+            padding-top: 10px;
+        }
+
+/* --------------------------- IMAGE STYLE ------------------------- */
 img {
+    padding-top: 50px;
+    padding-bottom: 134px;
     width: 100%;
     margin: 0 auto;
     overflow: auto;
-    padding-bottom: 135px;
-    padding-top: 50px;
 }
 
 .image-url {

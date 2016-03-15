@@ -19,7 +19,7 @@
             ctx.drawImage(image, 0, imageBounds.top, image.width, image.height);
 
             pColor = ctx.getImageData(xCord, yCord - headSize, 1, 1).data;
-            if (!touchMoved) {
+            if (!touchMoved && pColor[3] !== 0) {
                 colorName(pColor[0], pColor[1], pColor[2]);
                 changeColor(pColor[0], pColor[1], pColor[2]);
             }

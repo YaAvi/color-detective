@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Color Detective</title>
-        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' 'unsafe-inline' data:; style-src * 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/color.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    </head>
-    <body>
-        <div class="header" id="head">
-            <div class="title">Color detective</div>
-            <div onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G29WRUWENX9SU';" class="donate">
-                <i class="material-icons">monetization_on</i>
-            </div>
+
+<head>
+    <title>Color Detective</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' 'unsafe-inline' data:; style-src * 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="header" id="head">
+        <div class="history-button" id="history-button">
+            <i class="material-icons">history</i>
         </div>
-        
-        <img id="camImage" src="img/portrait.png" />
-        <div class="color" id="color"><p>Color</p></div>
-        
+        <div class="title">Color detective</div>
+        <div onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G29WRUWENX9SU';" class="donate">
+            <i class="material-icons">monetization_on</i>
+        </div>
+    </div>
+
+    <div class="history" id="history">
+    </div>
+
+
+    <img id="camImage" src="img/portrait.png" />
+    <div id="wrapper">
+        <div class="color" id="color">
+            <p>Color</p>
+        </div>
         <div class="button-div">
             <div class="button" id="url-button"><i class="material-icons">public</i></div>
             <div class="button" id="camera-button"><i class="material-icons">camera_alt</i></div>
             <div class="button" id="gallery-button"><i class="material-icons">collections</i></div>
         </div>
-        
+
         <div class="image-url" id="image-url">
             <input type="text" class="url-input" id="url-input" placeholder="image url">
             <div class="url-confirm" id="url-confirm"><i class="material-icons">send</i></div>
         </div>
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        
-        <script type="text/javascript" charset="utf-8" src="js/colorData.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/color.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/style.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/url.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/gallery.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/backButtonHandler.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/oriantationHandler.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/touchHandler.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/tts.js"></script>
-        
-    </body>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/colorData.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/history.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/color.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/style.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/url.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/gallery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/backButtonHandler.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/oriantationHandler.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/touchHandler.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/tts.js"></script>
+
+</body>
+
 </html>
