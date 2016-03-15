@@ -48,7 +48,6 @@ var style = (function () {
             head.style.color = 'floralwhite';
             wrapper.style.color = 'floralwhite';
         }
-        colorHistory.addColor(color.innerHTML, r, g, b);
     }
     
     function applyClass() {

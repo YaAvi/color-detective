@@ -2,6 +2,7 @@ var colorHistory = (function () {
     'use strict';
     var historyButton = document.getElementById('history-button'),
         history = document.getElementById('history'),
+        deleteHistoryButton = document.getElementById('delete-history'),
         wrapper = document.getElementById('wrapper'),
         mainColor = document.getElementById('color'),
         clicked = false,
@@ -15,9 +16,17 @@ var colorHistory = (function () {
         return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }
     
+    // Hex to RGB
+    function hexToR(h) {return parseInt(h.substring(1, 3), 16); } // R
+    function hexToG(h) {return parseInt(h.substring(3, 5), 16); } // G
+    function hexToB(h) {return parseInt(h.substring(5, 7), 16); } // B
+    
     function createColorElement(name, hex) {
         var colorSample = document.createElement('div'),
             colorName = document.createElement('div'),
+            red = hexToR(hex),
+            green = hexToG(hex),
+            blue = hexToB(hex),
             colorHex = document.createElement('div');
         colorSample.className = 'color-sample';
         colorName.className = 'color-name';
@@ -29,9 +38,8 @@ var colorHistory = (function () {
         colorSample.style.backgroundColor = hex;
         colorSample.style.color = wrapper.style.color;
         colorSample.onclick = function toMainColor() {
-            mainColor.style.backgroundColor = hex;
             mainColor.innerHTML = name;
-            mainColor.style.color = colorSample.style.color;
+            style.changeColor(red, green, blue);
         };
         return colorSample;
     }
@@ -68,7 +76,18 @@ var colorHistory = (function () {
             clicked = false;
         }
     }
+    
+    function removeHistory() {
+        if (historyStoreage.length > 0) {
+            var delButton = document.getElementById('delete-history');
+            history.innerHTML = '';
+            history.appendChild(delButton);
+            historyStoreage = [];
+        }
+    }
+    
     historyButton.onclick = buttonHandle;
+    deleteHistoryButton.onclick = removeHistory;
     return {
         addColor: addColor
     };

@@ -72,6 +72,12 @@ body {
             width: 98.4%;
             padding-top: 10px;
         }
+    .delete-history {
+        float: right;
+    }
+        .delete-history:active > .material-icons {
+            transform: scale(0.7);
+        }
 
 /* --------------------------- IMAGE STYLE ------------------------- */
 img {

@@ -2,6 +2,7 @@
     'use strict';
     var image = document.getElementById('camImage'),
         touchMoved = false,
+        mainColor = document.getElementById('color'),
         headSize = 50;
     
     function touchHandler(colorName, changeColor) {
@@ -22,6 +23,7 @@
             if (!touchMoved && pColor[3] !== 0) {
                 colorName(pColor[0], pColor[1], pColor[2]);
                 changeColor(pColor[0], pColor[1], pColor[2]);
+                colorHistory.addColor(mainColor.innerHTML, pColor[0], pColor[1], pColor[2]);
             }
             touchMoved = false;
         }, false);
