@@ -33,6 +33,13 @@ var colorHistory = (function () {
         colorHex.className = 'color-hex';
         colorName.innerHTML = name;
         colorHex.innerHTML = hex;
+        colorHex.onclick = function rgbOrHex() {
+            if (colorHex.innerHTML === hex) {
+                colorHex.innerHTML = '(' + red + ', ' + green + ', ' + blue + ')';
+            } else {
+                colorHex.innerHTML = hex;
+            }
+        };
         colorSample.appendChild(colorName);
         colorSample.appendChild(colorHex);
         colorSample.style.backgroundColor = hex;

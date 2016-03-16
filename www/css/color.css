@@ -6,6 +6,9 @@
 body {
     background-color: #909090;
     color: floralwhite;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 
 /* -------------------------- HEADER STYLE ------------------------- */
@@ -66,14 +69,13 @@ body {
             width: 100%;
             padding-top: 1px;
             padding-left: 3px;
-            -webkit-user-select: none; /* Chrome/Safari */        
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE10+ */
         }
         .color-hex {
             text-align: right;
-            width: 98.4%;
+            width: 59%;
             padding-top: 10px;
+            padding-right: 3px;
+            float: right;
         }
     #delete-history {
         float: right;
@@ -156,9 +158,6 @@ img {
     padding: 25px 0;
     text-align: center;
     background-color: #777777;
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
 }
 #color p {
     transition: all .1s ease-out;
@@ -172,9 +171,6 @@ img {
 .material-icons {
     font-size: 2em !important;
     transition: all .2s ease-in-out;
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
 }
 
     .button:active > .material-icons {
