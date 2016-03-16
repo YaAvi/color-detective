@@ -41,7 +41,7 @@ var style = (function () {
         changeBackgroundColor(color, r, g, b);
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));
         // brightness check
-        if ((((r * 299) + (g * 587) + (b * 114)) / 1000) > 220) {
+        if ((((r * 299) + (g * 587) + (b * 114)) / 1000) > 200) {
             head.style.color = 'rgb(40,40,40)';
             wrapper.style.color = 'rgb(40,40,40)';
         } else {
