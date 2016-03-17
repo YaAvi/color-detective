@@ -4,7 +4,7 @@
 <head>
     <title>Color Detective</title>
     <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' 'unsafe-inline' data:; style-src * 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/color.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -21,13 +21,16 @@
     </div>
 
     <div id="history">
-        <div id="delete-history">
-            <i class="material-icons">delete</i>
+        <div id="del-buttons">
+            <div id="del-one"><i class="material-icons">delete</i></div>
+            <div id="del-all"><i class="material-icons">delete_forever</i></div>
         </div>
     </div>
 
+    <div class="zoomable">
+        <img id="camImage" src="img/portrait.png" />
+    </div>
 
-    <img id="camImage" src="img/portrait.png" />
     <div id="wrapper">
         <div id="color">
             <p>Color</p>

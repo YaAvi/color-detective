@@ -60,10 +60,14 @@ body {
     overflow: auto;
 }
     .color-sample {
+        transition: all .25s ease-in-out;
         width: 180px;
         height: 50px;
         z-index: 101;
-        margin: 5px;
+        margin: 2px 5px;
+        position: relative;
+        left: -190px;
+        float: left;
     }
         .color-name {
             width: 100%;
@@ -79,18 +83,41 @@ body {
         }
     #delete-history {
         float: right;
+        width: 100%;
     }
-        #delete-history:active > .material-icons {
-            transform: scale(0.7);
+        #del-buttons {
+            margin: 5px;
         }
+    
+            #del-one {
+                width: 50%;
+                float: left;
+                text-align: center;
+            }
+            #del-all {
+                width: 50%;
+                float: left;
+                text-align: center;
+            }
+            #del-one:active > .material-icons {
+                transform: scale(0.7);
+            }
+            #del-all:active > .material-icons {
+                transform: scale(0.7);
+            }
 
 /* --------------------------- IMAGE STYLE ------------------------- */
+.zoomable {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    bottom: 134px;
+    overflow: auto;
+    overflow-x: auto;
+}
 img {
-    padding-top: 50px;
-    padding-bottom: 134px;
     width: 100%;
     margin: 0 auto;
-    overflow: auto;
 }
 
 
