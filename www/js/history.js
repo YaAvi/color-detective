@@ -116,6 +116,10 @@ var colorHistory = (function () {
     delOneSample.onclick = removeOne;
     delAllSamples.onclick = removeAll;
     return {
-        addColor: addColor
+        addColor: addColor,
+        close: function () {
+            history.style.left = -190 + 'px';
+            clicked = false;
+        }
     };
 }());
