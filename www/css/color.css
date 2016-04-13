@@ -123,13 +123,6 @@ img {
     transition: all .3s ease-in-out;
 }
 
-
-.portrait {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
 /* --------------------------- BUTTONS STYLE ------------------------- */
 
 .button-div {
