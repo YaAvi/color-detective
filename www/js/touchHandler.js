@@ -2,10 +2,7 @@
     'use strict';
     var image = document.getElementById('camImage'),
         touchMoved = false,
-        mainColor = document.getElementById('color'),
-        initialWidth = image.width,
-        tapped = null,
-        zoomed = false;
+        mainColor = document.getElementById('color');
 
     function touchHandler(colorName, changeColor) {
         image.addEventListener('touchend', function (e) {
