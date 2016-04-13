@@ -2,8 +2,11 @@
     'use strict';
     var image = document.getElementById('camImage'),
         touchMoved = false,
-        mainColor = document.getElementById('color');
-    
+        mainColor = document.getElementById('color'),
+        initialWidth = image.width,
+        tapped = null,
+        zoomed = false;
+
     function touchHandler(colorName, changeColor) {
         image.addEventListener('touchend', function (e) {
             var pColor,
@@ -15,10 +18,9 @@
                 ctx = canvas.getContext('2d');
             canvas.width = image.width;
             canvas.height = image.height + imageBounds.top; // for when the image is not overflowing 
-
             ctx.drawImage(image, 0, imageBounds.top, image.width, image.height);
 
-            pColor = ctx.getImageData(xCord, yCord, 1, 1).data;
+            pColor = ctx.getImageData(xCord - imageBounds.left, yCord, 1, 1).data;
             if (!touchMoved && pColor[3] !== 0) {
                 colorName(pColor[0], pColor[1], pColor[2]);
                 changeColor(pColor[0], pColor[1], pColor[2]);
@@ -26,7 +28,7 @@
             }
             touchMoved = false;
         }, false);
-        
+
         image.addEventListener('touchmove', function (e) {
             touchMoved = true;
         }, false);

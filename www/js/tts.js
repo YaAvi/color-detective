@@ -10,7 +10,7 @@
             local: 'en-GB',
             rate: 0.8
         }, function () {
-            console.log('success');
+            console.log('tts has spoken');
         }, function (reason) {
             console.log(reason);
         });

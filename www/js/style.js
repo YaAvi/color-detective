@@ -7,6 +7,8 @@ var style = (function () {
         galleryButton = document.getElementById('gallery-button'),
         urlButton = document.getElementById('url-button'),
         confirmButton = document.getElementById('url-confirm'),
+        zoomIn = document.getElementById('zoom-in-button'),
+        zoomOut = document.getElementById('zoom-out-button'),
         wrapper = document.getElementById('wrapper'),
         imageUrl = document.getElementById('image-url');
     
@@ -37,6 +39,8 @@ var style = (function () {
         changeBackgroundColor(urlButton, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
         changeBackgroundColor(imageUrl, buttonColor(r, 30), buttonColor(g, 30), buttonColor(b, 30));
         changeBackgroundColor(confirmButton, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
+        changeBackgroundColor(zoomIn, buttonColor(r, 40), buttonColor(g, 40), buttonColor(b, 40));
+        changeBackgroundColor(zoomOut, buttonColor(r, 40), buttonColor(g, 40), buttonColor(b, 40));
         changeBackgroundColor(head, buttonColor(r, 15), buttonColor(g, 15), buttonColor(b, 15));
         changeBackgroundColor(color, r, g, b);
         changeBackgroundColor(document.body, bodyColor(r), bodyColor(g), bodyColor(b));

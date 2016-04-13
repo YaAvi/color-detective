@@ -17,7 +17,7 @@
     }
 
     function galleryError() {
-        console.log("Camera canceled!");
+        console.log("Gallery canceled!");
     }
 
     function loadPhoto() {
