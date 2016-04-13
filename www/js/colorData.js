@@ -440,7 +440,6 @@ var colorData = (function () {
         ["604913", "Horses Neck"],
         ["605B73", "Smoky"],
         ["606E68", "Corduroy"],
-        ["9E7F4C", "Shit Brown"],
         ["6093D1", "Danube"],
         ["612718", "Espresso"],
         ["614051", "Eggplant"],
