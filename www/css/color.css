@@ -22,6 +22,7 @@ body {
     z-index: 500;
     background-color: #737373;
     transition: all .3s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
 }
     #history-button {   
         padding: 9px 4px;
@@ -115,6 +116,8 @@ body {
     overflow: auto;
     overflow-x: auto;
     display: flex;
+    background: url(../img/load-anim/Preloader.gif) center no-repeat;
+    background-size: 80px;
 }
 img {
     width: 100%;
@@ -189,6 +192,7 @@ img {
     padding: 25px 0;
     text-align: center;
     background-color: #777777;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 #color p {
     transition: all .1s ease-out;

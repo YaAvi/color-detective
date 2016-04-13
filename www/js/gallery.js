@@ -4,6 +4,7 @@
         PHOTOLIBRARY = 0,
         src,
         galleryButton = document.getElementById('gallery-button'),
+        image = document.getElementById('camImage'),
         galleryOptions = {
             quality: 77,
             destinationType: DATA_URL,
@@ -17,10 +18,12 @@
     }
 
     function galleryError() {
+        image.style.visibility = "visible";
         console.log("Gallery canceled!");
     }
 
     function loadPhoto() {
+        image.style.visibility = "hidden";
         navigator.camera.getPicture(galleryCallback, galleryError, galleryOptions);
     }
     

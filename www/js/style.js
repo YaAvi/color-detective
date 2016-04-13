@@ -54,19 +54,10 @@ var style = (function () {
         }
     }
     
-    function applyClass() {
-        if (screen.orientation.type === "portrait-primary" && image.height < image.width) {
-            image.className = "portrait";
-        } else {
-            image.className = "landscape";
-        }
-    }
-    
     function changeImgSrc(src) {
         image.src = src;
+        image.style.visibility = "visible";
     }
-    
-    image.onload = applyClass;
     
     return {
         changeColor: changeStyleColor,

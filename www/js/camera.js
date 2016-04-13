@@ -3,6 +3,7 @@
     var DATA_URL = 0,
         src,
         cameraButton = document.getElementById('camera-button'),
+        image = document.getElementById('camImage'),
         cameraOptions = {
             quality: 77,
             destinationType: DATA_URL,
@@ -15,10 +16,12 @@
     }
 
     function cameraError() {
+        image.style.visibility = "visible";
         console.log("Camera canceled!");
     }
 
     function capturePhoto() {
+        image.style.visibility = "hidden";
         navigator.camera.getPicture(cameraCallback, cameraError, cameraOptions);
     }
     

@@ -3,6 +3,7 @@
     var urlButton = document.getElementById('url-button'),
         confirmButton = document.getElementById('url-confirm'),
         urlInput = document.getElementById('url-input'),
+        image = document.getElementById('camImage'),
         imageUrl = document.getElementById('image-url');
     function checkURL(url) {
         return (url.match(/\.(jpeg|jpg|gif|png)$/) !== null);
@@ -14,14 +15,13 @@
     function confirmUrl() {
         var url = urlInput.value;
         if (url) {
-            if (checkURL(url)) {
+            if (checkURL(url) && url !== "") {
                 style.changeImgSrc(url);
             } else {
                 window.alert("Not an image URL!");
             }
         }
         imageUrl.style.bottom = -70 + 'px';
-        
     }
     urlButton.onclick = urlHandle;
     confirmButton.onclick = confirmUrl;
