@@ -7,7 +7,7 @@ var CleanCSS = require('clean-css');
 var ImageMin = require('imagemin');
 var imagemin = new ImageMin();
 var cssMinifier = new CleanCSS({
-    keepSpecialComments: '*'
+    keepSpecialComments: 0
 });
 
 var rootDir = process.argv[2];
@@ -16,7 +16,7 @@ var platform = process.env.CORDOVA_PLATFORMS;
 var cliCommand = process.env.CORDOVA_CMDLINE;
 var isRelease = true;
 
-var isRelease = (cliCommand.indexOf('--release') > -1); // comment the above line and uncomment this line to turn the hook on only for release
+//var isRelease = (cliCommand.indexOf('--release') > -1); // comment the above line and uncomment this line to turn the hook on only for release
 if (!isRelease) {
     return;
 }
