@@ -187,9 +187,9 @@ img {
 #color {
     width: 100%;
     font-size: 1em;
-    position: fixed;
+    position: absolute;
     bottom: 69px;
-    padding: 25px 0;
+    padding: 23px 0 23px 0;
     text-align: center;
     background-color: #777777;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
