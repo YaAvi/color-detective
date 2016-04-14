@@ -1,0 +1,28 @@
+{
+  "name": "color-detective",
+  "version": "1.0.0",
+  "description": "A color picker app",
+  "main": "index.js",
+  "dependencies": {
+    "clean-css": "^3.4.12",
+    "cordova-minify": "^0.0.15",
+    "imagemin": "^4.0.0",
+    "uglify-js": "^2.6.2"
+  },
+  "devDependencies": {
+    "cordova-minify": "0.0.15"
+  },
+  "scripts": {
+    "test": "'serve'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaAvi/color-detective.git"
+  },
+  "author": "Avraham Netanel Yaakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YaAvi/color-detective/issues"
+  },
+  "homepage": "https://github.com/YaAvi/color-detective#readme"
+}
