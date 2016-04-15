@@ -34,10 +34,26 @@ body {
         }
     .title {
         float: left;
-        width: 70%;
+        width: 48%;
         padding: 14px 5px;
         font-size: 1.13em;
     }
+    #prev-button {
+        width: 10%;
+        padding: 9px 4px;      
+        float: right;
+    }
+        #prev-button:active > .material-icons {
+            transform: scale(0.7);
+        }
+    #next-button {
+        width: 10%;
+        padding: 9px 4px;      
+        float: right;
+    }
+        #next-button:active > .material-icons {
+            transform: scale(0.7);
+        }
     .donate {
         padding: 9px 4px;
         float: right;

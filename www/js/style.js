@@ -53,8 +53,8 @@ var style = (function () {
             wrapper.style.color = 'floralwhite';
         }
     }
-    
     function changeImgSrc(src) {
+        imageHistory.addImage(src);
         image.src = src;
         image.style.visibility = "visible";
     }
